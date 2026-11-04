@@ -153,3 +153,26 @@
     display: none !important;
   }
 }
+
+/* Door wall horizontal scroll track aligned with max-w-7xl container */
+.doors-scroll-track {
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+  scroll-padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .doors-scroll-track {
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+    scroll-padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .doors-scroll-track {
+    padding-left: max(2rem, calc((100% - 1280px) / 2 + 2rem));
+    padding-right: max(2rem, calc((100% - 1280px) / 2 + 2rem));
+    scroll-padding-left: max(2rem, calc((100% - 1280px) / 2 + 2rem));
+  }
+}

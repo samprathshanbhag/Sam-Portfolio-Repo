@@ -18,31 +18,34 @@ import { skillDoors, SkillDoor } from '@/data/skills';
 
 function BarChartVisual() {
   return (
-    <div className="h-14 w-full rounded-xl bg-[#0E0D0D] border border-surface-border/70 p-2 mb-3 flex items-center justify-center overflow-hidden">
-      <svg viewBox="0 0 200 48" className="w-full h-full text-accent" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Dashboards bar chart visual">
+    <div className="h-[68px] sm:h-[72px] w-full rounded-xl bg-[#0C0B0B] border border-surface-border/80 px-2.5 py-1.5 mb-3 flex items-center justify-center overflow-hidden">
+      <svg viewBox="0 0 220 54" className="w-full h-full text-accent" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Dashboards bar chart visual">
         <defs>
           <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#F5C163" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#E8B04A" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#E8B04A" stopOpacity="0.3" />
           </linearGradient>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#E8B04A" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#E8B04A" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#F5C163" stopOpacity="1" />
           </linearGradient>
         </defs>
-        <line x1="10" y1="12" x2="190" y2="12" stroke="#262423" strokeDasharray="3 3" strokeWidth="1" />
-        <line x1="10" y1="28" x2="190" y2="28" stroke="#262423" strokeDasharray="3 3" strokeWidth="1" />
-        <line x1="10" y1="44" x2="190" y2="44" stroke="#33302E" strokeWidth="1" />
+        {/* Subtle horizontal grid lines */}
+        <line x1="12" y1="14" x2="208" y2="14" stroke="#262423" strokeDasharray="3 3" strokeWidth="1.2" />
+        <line x1="12" y1="30" x2="208" y2="30" stroke="#262423" strokeDasharray="3 3" strokeWidth="1.2" />
+        <line x1="12" y1="48" x2="208" y2="48" stroke="#383431" strokeWidth="1.5" />
 
-        <rect x="20" y="24" width="14" height="20" rx="2" fill="url(#barGrad)" opacity="0.65" />
-        <rect x="52" y="16" width="14" height="28" rx="2" fill="url(#barGrad)" opacity="0.8" />
-        <rect x="84" y="28" width="14" height="16" rx="2" fill="url(#barGrad)" opacity="0.5" />
-        <rect x="116" y="10" width="14" height="34" rx="2" fill="url(#barGrad)" opacity="0.9" />
-        <rect x="148" y="4" width="14" height="40" rx="2" fill="url(#barGrad)" />
+        {/* Scaled Crisp Bars */}
+        <rect x="22" y="26" width="18" height="22" rx="3" fill="url(#barGrad)" opacity="0.75" />
+        <rect x="60" y="16" width="18" height="32" rx="3" fill="url(#barGrad)" opacity="0.85" />
+        <rect x="98" y="32" width="18" height="16" rx="3" fill="url(#barGrad)" opacity="0.65" />
+        <rect x="136" y="10" width="18" height="38" rx="3" fill="url(#barGrad)" opacity="0.92" />
+        <rect x="174" y="4" width="18" height="44" rx="3" fill="url(#barGrad)" opacity="1" />
 
-        <path d="M 27 22 L 59 14 L 91 26 L 123 8 L 155 2" stroke="url(#lineGrad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="155" cy="2" r="3" fill="#F5C163" />
-        <circle cx="155" cy="2" r="6" stroke="#F5C163" strokeWidth="1" opacity="0.5" />
+        {/* Upward Line Trend with glowing endpoint */}
+        <path d="M 31 24 L 69 14 L 107 30 L 145 8 L 183 3" stroke="url(#lineGrad)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="183" cy="3" r="3.5" fill="#F5C163" />
+        <circle cx="183" cy="3" r="7" stroke="#F5C163" strokeWidth="1.2" opacity="0.6" />
       </svg>
     </div>
   );
@@ -50,15 +53,15 @@ function BarChartVisual() {
 
 function MedallionPipelineVisual() {
   return (
-    <div className="h-14 w-full rounded-xl bg-[#0E0D0D] border border-surface-border/70 p-2 mb-3 flex items-center justify-center overflow-hidden">
-      <svg viewBox="0 0 200 48" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bronze Silver Gold pipeline visual">
+    <div className="h-[68px] sm:h-[72px] w-full rounded-xl bg-[#0C0B0B] border border-surface-border/80 px-2 py-1.5 mb-3 flex items-center justify-center overflow-hidden">
+      <svg viewBox="0 0 220 54" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bronze Silver Gold pipeline visual">
         <defs>
           <linearGradient id="bronzeGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#C4804E" />
-            <stop offset="100%" stopColor="#7E4720" />
+            <stop offset="0%" stopColor="#D48D55" />
+            <stop offset="100%" stopColor="#8A4C22" />
           </linearGradient>
           <linearGradient id="silverGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#E2E8F0" />
+            <stop offset="0%" stopColor="#F1F5F9" />
             <stop offset="100%" stopColor="#64748B" />
           </linearGradient>
           <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
@@ -67,29 +70,35 @@ function MedallionPipelineVisual() {
           </linearGradient>
         </defs>
 
-        <line x1="38" y1="24" x2="162" y2="24" stroke="#2E2B29" strokeWidth="3" strokeDasharray="4 3" />
-        <line x1="38" y1="24" x2="162" y2="24" stroke="#E8B04A" strokeWidth="1.5" strokeOpacity="0.4" />
+        {/* Central Pipeline Track */}
+        <line x1="32" y1="27" x2="188" y2="27" stroke="#2B2826" strokeWidth="3.5" strokeDasharray="5 3" />
+        <line x1="32" y1="27" x2="188" y2="27" stroke="#E8B04A" strokeWidth="1.8" strokeOpacity="0.8" />
 
-        <g transform="translate(14, 8)">
-          <rect x="0" y="0" width="44" height="32" rx="6" fill="#1C1816" stroke="#C4804E" strokeWidth="1.2" />
-          <circle cx="10" cy="16" r="4" fill="url(#bronzeGrad)" />
-          <text x="20" y="19" fill="#D49363" fontSize="8" fontFamily="monospace" fontWeight="bold">BRZ</text>
+        {/* Bronze Stage */}
+        <g transform="translate(10, 8)">
+          <rect x="0" y="0" width="48" height="38" rx="7" fill="#1C1816" stroke="#D48D55" strokeWidth="1.6" />
+          <circle cx="11" cy="19" r="5" fill="url(#bronzeGrad)" />
+          <text x="21" y="22" fill="#E5A06D" fontSize="9" fontFamily="monospace" fontWeight="bold">BRZ</text>
         </g>
 
-        <path d="M 64 21 L 69 24 L 64 27" stroke="#E8B04A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Chevron Flow 1 */}
+        <path d="M 68 23 L 74 27 L 68 31" stroke="#E8B04A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.85" />
 
-        <g transform="translate(76, 8)">
-          <rect x="0" y="0" width="44" height="32" rx="6" fill="#16181B" stroke="#94A3B8" strokeWidth="1.2" />
-          <circle cx="10" cy="16" r="4" fill="url(#silverGrad)" />
-          <text x="20" y="19" fill="#CBD5E1" fontSize="8" fontFamily="monospace" fontWeight="bold">SLV</text>
+        {/* Silver Stage */}
+        <g transform="translate(83, 8)">
+          <rect x="0" y="0" width="48" height="38" rx="7" fill="#16181B" stroke="#94A3B8" strokeWidth="1.6" />
+          <circle cx="11" cy="19" r="5" fill="url(#silverGrad)" />
+          <text x="21" y="22" fill="#E2E8F0" fontSize="9" fontFamily="monospace" fontWeight="bold">SLV</text>
         </g>
 
-        <path d="M 126 21 L 131 24 L 126 27" stroke="#E8B04A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Chevron Flow 2 */}
+        <path d="M 141 23 L 147 27 L 141 31" stroke="#E8B04A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.85" />
 
-        <g transform="translate(138, 8)">
-          <rect x="0" y="0" width="48" height="32" rx="6" fill="#1E1A14" stroke="#F5C163" strokeWidth="1.5" />
-          <circle cx="11" cy="16" r="4.5" fill="url(#goldGrad)" />
-          <text x="21" y="19" fill="#F5C163" fontSize="8" fontFamily="monospace" fontWeight="bold">GOLD</text>
+        {/* Gold Stage */}
+        <g transform="translate(156, 7)">
+          <rect x="0" y="0" width="54" height="40" rx="7" fill="#221C14" stroke="#F5C163" strokeWidth="2" />
+          <circle cx="12" cy="20" r="5.5" fill="url(#goldGrad)" />
+          <text x="23" y="23" fill="#F5C163" fontSize="9.5" fontFamily="monospace" fontWeight="bold">GOLD</text>
         </g>
       </svg>
     </div>
@@ -98,34 +107,41 @@ function MedallionPipelineVisual() {
 
 function StarSchemaVisual() {
   return (
-    <div className="h-14 w-full rounded-xl bg-[#0E0D0D] border border-surface-border/70 p-2 mb-3 flex items-center justify-center overflow-hidden">
-      <svg viewBox="0 0 200 48" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Star schema data modeling visual">
-        <line x1="38" y1="12" x2="78" y2="24" stroke="#E8B04A" strokeWidth="1" strokeOpacity="0.6" strokeDasharray="2 2" />
-        <line x1="38" y1="36" x2="78" y2="24" stroke="#E8B04A" strokeWidth="1" strokeOpacity="0.6" strokeDasharray="2 2" />
-        <line x1="162" y1="12" x2="122" y2="24" stroke="#E8B04A" strokeWidth="1" strokeOpacity="0.6" strokeDasharray="2 2" />
-        <line x1="162" y1="36" x2="122" y2="24" stroke="#E8B04A" strokeWidth="1" strokeOpacity="0.6" strokeDasharray="2 2" />
+    <div className="h-[68px] sm:h-[72px] w-full rounded-xl bg-[#0C0B0B] border border-surface-border/80 px-2 py-1.5 mb-3 flex items-center justify-center overflow-hidden">
+      <svg viewBox="0 0 220 54" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Star schema data modeling visual">
+        {/* Connecting Relationship Lines */}
+        <line x1="48" y1="14" x2="84" y2="27" stroke="#E8B04A" strokeWidth="1.8" strokeOpacity="0.8" strokeDasharray="3 2" />
+        <line x1="48" y1="40" x2="84" y2="27" stroke="#E8B04A" strokeWidth="1.8" strokeOpacity="0.8" strokeDasharray="3 2" />
+        <line x1="172" y1="14" x2="136" y2="27" stroke="#E8B04A" strokeWidth="1.8" strokeOpacity="0.8" strokeDasharray="3 2" />
+        <line x1="172" y1="40" x2="136" y2="27" stroke="#E8B04A" strokeWidth="1.8" strokeOpacity="0.8" strokeDasharray="3 2" />
 
-        <rect x="8" y="4" width="34" height="17" rx="3" fill="#191817" stroke="#3D3A37" strokeWidth="1" />
-        <rect x="8" y="4" width="34" height="5" rx="3" fill="#2E2B28" />
-        <text x="14" y="16" fill="#A8A29E" fontSize="7" fontFamily="monospace">DIM 1</text>
+        {/* Dimension 1 (Top Left) */}
+        <rect x="6" y="5" width="42" height="19" rx="4" fill="#191817" stroke="#4A4541" strokeWidth="1.4" />
+        <rect x="6" y="5" width="42" height="6" rx="4" fill="#332E2A" />
+        <text x="13" y="19" fill="#D1CCC5" fontSize="8.5" fontFamily="monospace" fontWeight="bold">DIM 1</text>
 
-        <rect x="8" y="27" width="34" height="17" rx="3" fill="#191817" stroke="#3D3A37" strokeWidth="1" />
-        <rect x="8" y="27" width="34" height="5" rx="3" fill="#2E2B28" />
-        <text x="14" y="39" fill="#A8A29E" fontSize="7" fontFamily="monospace">DIM 2</text>
+        {/* Dimension 2 (Bottom Left) */}
+        <rect x="6" y="30" width="42" height="19" rx="4" fill="#191817" stroke="#4A4541" strokeWidth="1.4" />
+        <rect x="6" y="30" width="42" height="6" rx="4" fill="#332E2A" />
+        <text x="13" y="44" fill="#D1CCC5" fontSize="8.5" fontFamily="monospace" fontWeight="bold">DIM 2</text>
 
-        <rect x="76" y="8" width="48" height="32" rx="4" fill="#1F1B15" stroke="#E8B04A" strokeWidth="1.5" />
-        <rect x="76" y="8" width="48" height="10" rx="4" fill="#E8B04A" />
-        <text x="83" y="16" fill="#141313" fontSize="8" fontFamily="monospace" fontWeight="bold">FACT</text>
-        <line x1="82" y1="24" x2="118" y2="24" stroke="#3D362C" strokeWidth="1" />
-        <line x1="82" y1="30" x2="114" y2="30" stroke="#3D362C" strokeWidth="1" />
+        {/* Center Fact Table */}
+        <rect x="84" y="6" width="52" height="42" rx="5" fill="#211C14" stroke="#E8B04A" strokeWidth="2" />
+        <rect x="84" y="6" width="52" height="12" rx="5" fill="#E8B04A" fillOpacity="0.85" />
+        <text x="96" y="15" fill="#141313" fontSize="9" fontFamily="monospace" fontWeight="bold">FACT</text>
+        <line x1="90" y1="24" x2="130" y2="24" stroke="#E8B04A" strokeWidth="1.4" strokeOpacity="0.6" />
+        <line x1="90" y1="31" x2="124" y2="31" stroke="#E8B04A" strokeWidth="1.4" strokeOpacity="0.6" />
+        <line x1="90" y1="38" x2="116" y2="38" stroke="#E8B04A" strokeWidth="1.4" strokeOpacity="0.4" />
 
-        <rect x="156" y="4" width="36" height="17" rx="3" fill="#191817" stroke="#3D3A37" strokeWidth="1" />
-        <rect x="156" y="4" width="36" height="5" rx="3" fill="#2E2B28" />
-        <text x="162" y="16" fill="#A8A29E" fontSize="7" fontFamily="monospace">DIM 3</text>
+        {/* Dimension 3 (Top Right) */}
+        <rect x="172" y="5" width="42" height="19" rx="4" fill="#191817" stroke="#4A4541" strokeWidth="1.4" />
+        <rect x="172" y="5" width="42" height="6" rx="4" fill="#332E2A" />
+        <text x="179" y="19" fill="#D1CCC5" fontSize="8.5" fontFamily="monospace" fontWeight="bold">DIM 3</text>
 
-        <rect x="156" y="27" width="36" height="17" rx="3" fill="#191817" stroke="#3D3A37" strokeWidth="1" />
-        <rect x="156" y="27" width="36" height="5" rx="3" fill="#2E2B28" />
-        <text x="162" y="39" fill="#A8A29E" fontSize="7" fontFamily="monospace">DIM 4</text>
+        {/* Dimension 4 (Bottom Right) */}
+        <rect x="172" y="30" width="42" height="19" rx="4" fill="#191817" stroke="#4A4541" strokeWidth="1.4" />
+        <rect x="172" y="30" width="42" height="6" rx="4" fill="#332E2A" />
+        <text x="179" y="44" fill="#D1CCC5" fontSize="8.5" fontFamily="monospace" fontWeight="bold">DIM 4</text>
       </svg>
     </div>
   );
@@ -133,23 +149,28 @@ function StarSchemaVisual() {
 
 function StepMarkersVisual() {
   return (
-    <div className="h-14 w-full rounded-xl bg-[#0E0D0D] border border-surface-border/70 p-2 mb-3 flex items-center justify-center overflow-hidden">
-      <svg viewBox="0 0 200 48" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Step markers curriculum visual">
-        <path d="M 20 38 L 60 30 L 110 20 L 165 10" stroke="#2A2725" strokeWidth="3" strokeLinecap="round" />
-        <path d="M 20 38 L 60 30 L 110 20 L 165 10" stroke="#E8B04A" strokeWidth="1.5" strokeOpacity="0.6" strokeDasharray="4 2" />
+    <div className="h-[68px] sm:h-[72px] w-full rounded-xl bg-[#0C0B0B] border border-surface-border/80 px-2 py-1.5 mb-3 flex items-center justify-center overflow-hidden">
+      <svg viewBox="0 0 220 54" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Step markers curriculum visual">
+        {/* Curved Progress Path */}
+        <path d="M 22 42 Q 65 35 110 24 T 195 12" stroke="#2B2826" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M 22 42 Q 65 35 110 24 T 195 12" stroke="#E8B04A" strokeWidth="2" strokeOpacity="0.8" strokeDasharray="5 3" />
 
-        <circle cx="20" cy="38" r="8" fill="#1A1817" stroke="#665D4F" strokeWidth="1.2" />
-        <text x="17" y="41" fill="#A8A29E" fontSize="7" fontFamily="monospace" fontWeight="bold">01</text>
+        {/* Step 01 */}
+        <circle cx="22" cy="42" r="9" fill="#1A1817" stroke="#786B5A" strokeWidth="1.6" />
+        <text x="18" y="45" fill="#B8B3AA" fontSize="8.5" fontFamily="monospace" fontWeight="bold">01</text>
 
-        <circle cx="60" cy="30" r="8" fill="#1C1A17" stroke="#A88344" strokeWidth="1.2" />
-        <text x="57" y="33" fill="#E8B04A" fontSize="7" fontFamily="monospace" fontWeight="bold">02</text>
+        {/* Step 02 */}
+        <circle cx="72" cy="33" r="9" fill="#1E1A16" stroke="#B88A3B" strokeWidth="1.6" />
+        <text x="68" y="36" fill="#E8B04A" fontSize="8.5" fontFamily="monospace" fontWeight="bold">02</text>
 
-        <circle cx="110" cy="20" r="8" fill="#221E18" stroke="#DCA248" strokeWidth="1.4" />
-        <text x="107" y="23" fill="#F5C163" fontSize="7" fontFamily="monospace" fontWeight="bold">03</text>
+        {/* Step 03 */}
+        <circle cx="128" cy="22" r="10" fill="#241E16" stroke="#E8B04A" strokeWidth="1.8" />
+        <text x="124" y="25" fill="#F5C163" fontSize="9" fontFamily="monospace" fontWeight="bold">03</text>
 
-        <circle cx="165" cy="10" r="10" fill="#2A2216" stroke="#F5C163" strokeWidth="1.8" />
-        <path d="M 161 10 L 164 13 L 170 7" stroke="#F5C163" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="165" cy="10" r="13" stroke="#F5C163" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="2 2" />
+        {/* Step 04 (Achievement/Mastery) */}
+        <circle cx="188" cy="12" r="12" fill="#2E2416" stroke="#F5C163" strokeWidth="2.2" />
+        <circle cx="188" cy="12" r="16" stroke="#F5C163" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="3 2" />
+        <path d="M 183 12 L 187 16 L 194 9" stroke="#F5C163" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </div>
   );
@@ -188,7 +209,7 @@ export function DoorsSection() {
   };
 
   return (
-    <section id="work" className="pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 relative overflow-hidden border-t border-surface-border/50 scroll-mt-20">
+    <section id="work" className="pt-10 pb-12 sm:pb-16 relative overflow-hidden scroll-mt-20">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -236,7 +257,7 @@ export function DoorsSection() {
       {/* Horizontal Scroll Wall */}
       <div
         ref={scrollContainerRef}
-        className="w-full overflow-x-auto no-scrollbar scroll-smooth px-4 sm:px-8 lg:px-12 pb-6 flex gap-5 sm:gap-6 cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+        className="doors-scroll-track w-full overflow-x-auto no-scrollbar scroll-smooth pb-6 flex gap-5 sm:gap-6 cursor-grab active:cursor-grabbing snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {skillDoors.map((door) => (
@@ -295,7 +316,7 @@ function DoorCard({
         }
       }}
       onClick={handleCardClick}
-      className="flex-shrink-0 w-[285px] sm:w-[335px] snap-center select-none"
+      className="flex-shrink-0 w-[285px] sm:w-[335px] snap-start select-none"
     >
       <div className="relative rounded-2xl p-1.5 sm:p-2 bg-[#121111] border-2 border-surface-border/80 shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-accent/80 hover:shadow-[0_20px_50px_rgba(232,176,74,0.15)] overflow-hidden">
         {/* Top Arch Label */}

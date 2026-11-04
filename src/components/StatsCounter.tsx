@@ -11,7 +11,7 @@ export function StatsCounter() {
   return (
     <div
       ref={containerRef}
-      className="w-full mt-16 pt-10 border-t border-surface-border/70 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8"
+      className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8"
     >
       {profile.stats.map((stat, i) => (
         <motion.div

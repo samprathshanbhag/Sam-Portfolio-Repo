@@ -23,15 +23,9 @@ export function Hero() {
   const indicatorY = useTransform(scrollY, [0, 120], [0, 16]);
 
   const scrollToNext = () => {
-    const el = document.getElementById('stats') || document.getElementById('work');
+    const el = document.getElementById('stats');
     if (el) {
-      const navOffset = 64;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -203,7 +197,7 @@ export function Hero() {
       </section>
 
       {/* Stats Strip right below the hero fold */}
-      <section id="stats" className="relative border-y border-surface-border/60 py-8 bg-[#141313]/50">
+      <section id="stats" className="relative scroll-mt-[68px] border-b border-surface-border/50 py-10 sm:py-11 bg-[#141313]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <StatsCounter />
         </div>
