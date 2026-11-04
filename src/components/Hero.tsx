@@ -12,9 +12,12 @@ import { profile } from '@/data/profile';
 import { AbilityCard } from './AbilityCard';
 import { RotatingText } from './RotatingText';
 import { StatsCounter } from './StatsCounter';
+import { useEffect, useRef, useState } from 'react';
 
 export function Hero() {
   const { openContact } = useModal();
+  const heroRef = useRef<HTMLElement>(null);
+  const [showIndicator, setShowIndicator] = useState(true);
 
   const scrollToWork = () => {
     const el = document.getElementById('work');
@@ -29,8 +32,20 @@ export function Hero() {
     }
   };
 
+  // Hide the fixed indicator once the user scrolls past the hero section
+  useEffect(() => {
+    const sentinel = heroRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowIndicator(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="home" className="relative pt-24 lg:pt-[104px] pb-12 sm:pb-16 overflow-hidden">
+    <section ref={heroRef} id="home" className="relative pt-24 lg:pt-[104px] pb-12 sm:pb-16 overflow-hidden">
       {/* Background radial gradient accent */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -132,34 +147,35 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Scroll Indicator at bottom center of the hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          onClick={scrollToWork}
-          className="hidden lg:flex flex-col items-center justify-center pt-8 pb-3 cursor-pointer text-content-muted hover:text-accent transition-colors select-none group"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              scrollToWork();
-            }
-          }}
-          aria-label="Scroll to explore work"
-        >
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] mb-1.5 group-hover:text-accent transition-colors">
-            Scroll to explore
-          </span>
-          <ArrowDown className="w-3.5 h-3.5 text-accent animate-bounce" />
-        </motion.div>
-
         {/* Stats Strip */}
         <div className="mt-4 pt-6 border-t border-surface-border/60">
           <StatsCounter />
         </div>
       </div>
+
+      {/* Scroll Indicator — fixed to viewport bottom, hidden on mobile/short viewports and after scroll */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: showIndicator ? 1 : 0, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        onClick={scrollToWork}
+        className="scroll-indicator-btn"
+        role="button"
+        tabIndex={showIndicator ? 0 : -1}
+        aria-hidden={!showIndicator}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToWork();
+          }
+        }}
+        aria-label="Scroll to explore work"
+      >
+        <span className="text-[10px] font-mono uppercase tracking-[0.2em] mb-1.5 group-hover:text-accent transition-colors">
+          Scroll to explore
+        </span>
+        <ArrowDown className="w-3.5 h-3.5 text-accent animate-bounce" />
+      </motion.div>
     </section>
   );
 }
