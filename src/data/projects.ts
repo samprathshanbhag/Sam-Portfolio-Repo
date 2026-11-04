@@ -106,15 +106,15 @@ export const projects: Project[] = [
     featured: true,
     stack: ["Microsoft Fabric", "Lakehouse", "Dataflows Gen2", "SQL", "Data Modeling"],
     summary:
-      "Created and instructed a rigorous 5-month data analytics engineering curriculum, mentoring 26 interns in modern cloud analytics and Fabric best practices with a 90%+ graduation rate.",
+      "Created and instructed a rigorous 5-month data analytics engineering curriculum, mentoring 26 interns in modern cloud analytics and Fabric best practices to successful completion.",
     highlights: [
       "Authored a modular 5-month syllabus covering Lakehouse architecture, PySpark transformations, T-SQL star schemas, and Power BI semantic modeling.",
       "Conducted weekly live architectural design critiques, query optimization workshops, and milestone evaluations.",
-      "Guided 26 junior engineers to build production-grade portfolio projects with an outstanding 90%+ completion rate.",
+      "Guided 26 junior engineers to successfully build and deploy production-grade portfolio projects.",
     ],
     metrics: [
       { label: "Interns Mentored", value: "26 Engineers" },
-      { label: "Completion Rate", value: "90%+" },
+      { label: "Program Status", value: "Completed" },
       { label: "Curriculum Duration", value: "5 Months" },
     ],
     placeholderType: "curriculum",

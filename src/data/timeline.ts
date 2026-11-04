@@ -44,7 +44,7 @@ export const timeline: TimelineItem[] = [
       "Led design of the SITLBI Sales Analytics Data Warehouse in Microsoft Fabric: 9 dimension and 10 fact tables in T-SQL covering sales, AR, collections, stock, renewals and targets; coordinated design reviews with senior stakeholders.",
       "Implemented surrogate/natural keys, SCD Type 2 history tracking and audit fields; documented the model with an ER diagram in SQLDBM.",
       "Primary technical contributor on end-to-end analytics workflows (ingestion, modeling, reporting) using Lakehouse, Dataflows Gen2 and Semantic Models; worked directly with leadership on design and performance best practices.",
-      "Guided 26 interns on Microsoft Fabric and data modeling across a 5-month curriculum, achieving a 90%+ completion rate.",
+      "Guided 26 interns on Microsoft Fabric and data modeling across a 5-month curriculum to successful completion.",
     ],
     skills: ["Microsoft Fabric", "T-SQL", "SQLDBM", "SCD Type 2", "Dataflows Gen2", "Lakehouse", "Mentorship"],
   },

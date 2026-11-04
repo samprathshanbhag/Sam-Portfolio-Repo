@@ -152,7 +152,7 @@ export function ProjectVisualPlaceholder({ type, title }: PlaceholderProps) {
             </div>
             <div className="text-right">
               <div className="text-sm font-mono font-bold text-accent">26 Interns</div>
-              <div className="text-[9px] font-mono text-content-muted">90%+ Completion</div>
+              <div className="text-[9px] font-mono text-content-muted">Completed</div>
             </div>
           </div>
         )}

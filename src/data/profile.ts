@@ -20,7 +20,7 @@ export const profile = {
     { value: 1500000, display: "1.5M+", label: "Records Analyzed" },
     { value: 10, display: "10+", label: "Dashboards Built" },
     { value: 19, display: "9D / 10F", label: "Enterprise Warehouse Tables" },
-    { value: 26, display: "26", label: "Interns Guided (90%+ Rate)" },
+    { value: 26, display: "26", label: "Interns Guided" },
     { value: 919, display: "919/1000", label: "DP-600 Microsoft Score" },
   ],
   accentColor: "#E8B04A", // Warm Amber

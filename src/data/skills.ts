@@ -56,7 +56,7 @@ export const skillDoors: SkillDoor[] = [
     description:
       "Mentoring aspiring data engineers and analysts on Microsoft Fabric, data modeling, SQL optimization, and analytics workflows with structured hands-on curricula and peer code reviews.",
     tools: ["Microsoft Fabric", "Curriculum Design", "Mentorship", "Stakeholder Communication"],
-    metrics: ["26 Interns Guided", "90%+ Completion Rate", "5-Month Intensive Curriculum"],
+    metrics: ["26 Interns Guided", "Curriculum Completed", "5-Month Intensive Curriculum"],
     accent: "#BA68C8",
   },
 ];
