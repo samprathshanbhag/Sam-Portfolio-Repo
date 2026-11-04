@@ -85,7 +85,7 @@ export function AbilityCard() {
   );
 
   return (
-    <div className="relative w-full max-w-[305px] sm:max-w-[315px] lg:max-w-[325px] perspective-card ml-auto">
+    <div className="relative w-full max-w-[290px] sm:max-w-[300px] lg:max-w-[310px] perspective-card ml-auto">
       {/* Ambient glow */}
       <div className="absolute -inset-1.5 bg-gradient-to-r from-accent/20 via-amber-600/10 to-accent/20 rounded-2xl blur-xl opacity-40 group-hover:opacity-75 transition-opacity" />
 
@@ -101,7 +101,7 @@ export function AbilityCard() {
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        className="relative w-full rounded-2xl bg-gradient-to-b from-[#1C1B1A] via-[#161515] to-[#121111] border border-surface-border p-4 sm:p-4.5 shadow-[0_20px_50px_rgba(0,0,0,0.85)] select-none transition-shadow duration-300 hover:shadow-[0_25px_60px_rgba(232,176,74,0.15)] overflow-hidden"
+        className="relative w-full rounded-2xl bg-gradient-to-b from-[#1C1B1A] via-[#161515] to-[#121111] border border-surface-border p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.85)] select-none transition-shadow duration-300 hover:shadow-[0_25px_60px_rgba(232,176,74,0.15)] overflow-hidden"
       >
         {/* Dynamic Glare Overlay */}
         <div
@@ -113,11 +113,11 @@ export function AbilityCard() {
         />
 
         {/* Card Header: Chip & Classification */}
-        <div className="flex items-center justify-between border-b border-surface-border/70 pb-2.5 mb-3 text-xs font-mono">
+        <div className="flex items-center justify-between border-b border-surface-border/70 pb-2 mb-2 sm:mb-2.5 text-xs font-mono">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-4.5 rounded bg-gradient-to-tr from-amber-600 to-amber-300 p-[1px] shadow-sm flex items-center justify-center">
+            <div className="w-5.5 h-4 rounded bg-gradient-to-tr from-amber-600 to-amber-300 p-[1px] shadow-sm flex items-center justify-center">
               <div className="w-full h-full bg-[#1A1817] rounded-[2px] flex items-center justify-center">
-                <Cpu className="w-3 h-3 text-accent" />
+                <Cpu className="w-2.5 h-2.5 text-accent" />
               </div>
             </div>
             <span className="text-[10px] tracking-widest text-content-secondary uppercase font-semibold">
@@ -125,24 +125,24 @@ export function AbilityCard() {
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono tracking-wider">
+          <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[9px] font-mono tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>ACTIVE</span>
           </div>
         </div>
 
-        {/* Card Photo Area: 4:5 Portrait Ratio spanning FULL INNER WIDTH, Moody Low-Key B&W with Halo Backlight Glow */}
-        <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#0F0E0E] mb-2.5 sm:mb-3 border border-accent/25 shadow-[0_6px_22px_rgba(0,0,0,0.7)]">
+        {/* Card Photo Area: Reduced height (~295px), Moody Low-Key B&W with Halo Backlight Glow */}
+        <div className="relative w-full h-[260px] sm:h-[275px] lg:h-[295px] rounded-xl overflow-hidden bg-[#0F0E0E] mb-2 sm:mb-2.5 border border-accent/25 shadow-[0_6px_22px_rgba(0,0,0,0.7)]">
           {/* Layer 1: Warm amber radial glow centered behind head and slightly above it (halo/backlight raised to ~30% opacity) */}
           <motion.div
             style={{ x: glowX, y: glowY }}
-            className="pointer-events-none absolute -top-10 left-[54%] -translate-x-1/2 w-72 h-72 sm:w-80 sm:h-80 rounded-full"
+            className="pointer-events-none absolute -top-8 left-[54%] -translate-x-1/2 w-64 h-64 rounded-full"
           >
             <div
               className="w-full h-full rounded-full"
               style={{
                 background: 'radial-gradient(circle, rgba(232, 176, 74, 0.60) 0%, rgba(232, 176, 74, 0.35) 38%, rgba(232, 176, 74, 0.15) 60%, transparent 75%)',
-                filter: 'blur(26px)',
+                filter: 'blur(24px)',
               }}
             />
           </motion.div>
@@ -156,7 +156,7 @@ export function AbilityCard() {
             }}
           />
 
-          {/* Layer 3: Tightly Cropped 4:5 B&W Low-key Photo with mix-blend-mode: screen */}
+          {/* Layer 3: Tightly Cropped B&W Low-key Photo with mix-blend-mode: screen */}
           <motion.div
             style={{ x: photoX, y: photoY }}
             className="absolute inset-0 z-10 pointer-events-none"
@@ -166,7 +166,7 @@ export function AbilityCard() {
               alt="Portrait of Samprath Shanbhag"
               fill
               priority
-              sizes="(max-width: 640px) 290px, 320px"
+              sizes="(max-width: 640px) 270px, 300px"
               style={{
                 objectFit: 'cover',
                 objectPosition: 'center center',
@@ -188,29 +188,29 @@ export function AbilityCard() {
           <div className="pointer-events-none absolute inset-0 z-20 shadow-[inset_0_0_18px_rgba(15,14,14,0.7)]" />
 
           {/* Overlays: Restyled BLR · INDIA tag in BOTTOM-LEFT (safely clear of neck and face) */}
-          <div className="absolute bottom-2.5 left-2.5 z-30 px-2.5 py-0.5 rounded-full bg-[#141313]/90 backdrop-blur-md border border-white/10 text-[9px] font-mono text-[#D4CFC6] tracking-wider shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+          <div className="absolute bottom-2 left-2 z-30 px-2 py-0.5 rounded-full bg-[#141313]/90 backdrop-blur-md border border-white/10 text-[9px] font-mono text-[#D4CFC6] tracking-wider shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             BLR · INDIA
           </div>
         </div>
 
         {/* Name and Designation */}
-        <div className="mb-2.5">
+        <div className="mb-2">
           <div className="flex items-baseline justify-between">
-            <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-content-primary">
+            <h3 className="text-base sm:text-lg font-semibold tracking-tight text-content-primary">
               {profile.name}
             </h3>
-            <span className="text-xs font-mono text-accent font-semibold">DP-600</span>
+            <span className="text-[11px] font-mono text-accent font-semibold">DP-600</span>
           </div>
-          <p className="text-xs font-mono text-accent tracking-wide mt-0.5">
+          <p className="text-[11px] font-mono text-accent tracking-wide mt-0.5">
             {profile.role} · Microsoft Fabric Specialist
           </p>
-          <p className="text-[11px] text-content-secondary mt-0.5 line-clamp-1 leading-snug">
+          <p className="text-[10px] text-content-secondary mt-0.5 line-clamp-1 leading-snug">
             Dimensional warehouses (9D/10F) & Medallion platforms.
           </p>
         </div>
 
         {/* Card Ability Meters / Badges */}
-        <div className="space-y-1 pt-2 border-t border-surface-border/60 text-[11px] font-mono">
+        <div className="space-y-0.5 pt-1.5 sm:space-y-1 sm:pt-2 border-t border-surface-border/60 text-[10px] font-mono">
           <div className="flex items-center justify-between text-content-secondary">
             <span className="flex items-center gap-1.5">
               <Database className="w-3 h-3 text-accent" />
@@ -237,7 +237,7 @@ export function AbilityCard() {
         </div>
 
         {/* Bottom Barcode / Serial */}
-        <div className="mt-2.5 pt-2 border-t border-surface-border/40 flex items-center justify-between text-[8px] font-mono text-content-muted">
+        <div className="mt-1.5 pt-1.5 border-t border-surface-border/40 flex items-center justify-between text-[8px] font-mono text-content-muted">
           <span>SERIAL: FAB-DP600-2026-BLR</span>
           <span className="tracking-widest">||||| | |||| || |||</span>
         </div>

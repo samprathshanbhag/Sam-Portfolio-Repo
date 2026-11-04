@@ -143,30 +143,13 @@
   pointer-events: none;
 }
 
-/* Scroll indicator: fixed to viewport bottom while hero is in view */
-.scroll-indicator-btn {
-  display: none; /* hidden on mobile by default */
-  position: fixed;
-  bottom: clamp(40px, 7vh, 72px);
-  left: 50%;
-  transform: translateX(-50%);
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  color: var(--text-muted);
-  transition: color 0.2s ease, opacity 0.3s ease;
-  user-select: none;
-  z-index: 20;
-  pointer-events: auto;
+/* Hero scroll indicator: absolute inside hero, hidden at height < 720px */
+.hero-scroll-indicator {
+  display: flex;
 }
 
-.scroll-indicator-btn:hover {
-  color: var(--accent-amber);
-}
-
-/* Show only on large screens with enough height */
-@media (min-width: 1024px) and (min-height: 700px) {
-  .scroll-indicator-btn {
-    display: flex;
+@media (max-height: 719px) {
+  .hero-scroll-indicator {
+    display: none !important;
   }
 }
